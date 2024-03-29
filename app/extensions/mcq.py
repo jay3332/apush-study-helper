@@ -124,12 +124,12 @@ class MCQView(UserView):
 
         buffer = 1
         self.stimulus_spans: list[(int, int)] = []
-        question_sets = set[QuestionSet]()
+        question_sets = dict[QuestionSet, None]()
         for section in self.raw_sections:
             while True:
                 candidate = random.choice(section.mcqs)
                 if candidate not in question_sets:
-                    question_sets.add(candidate)
+                    question_sets[candidate] = None
                     self.stimulus_spans.extend(
                         [(buffer, buffer + len(candidate.questions) - 1)] * len(candidate.questions)
                     )
