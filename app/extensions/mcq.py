@@ -12,6 +12,8 @@ from config import Colors
 class MCQ(Cog):
     """Practice answering stimulus-based MCQs."""
 
+    emoji = '🧠'
+
     @group('mcq')
     async def mcq(self, _ctx: Context) -> CommandResponse:
         """Practice answering a stimulus-based MCQ."""
