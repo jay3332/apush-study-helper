@@ -1,0 +1,7 @@
+discord.py
+git+https://github.com/Gorialis/jishaku
+asyncpg
+python-dotenv
+better_exceptions
+aiohttp
+tabulate
