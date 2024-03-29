@@ -6,6 +6,8 @@ from app.util.views import UserView
 class Recall(Cog):
     """Practice recalling terms and definitions."""
 
+    emoji = '🧠'
+
     @group('recall')
     async def recall(self, _ctx: Context) -> CommandResponse:
         """Practice recalling terms and definitions."""
