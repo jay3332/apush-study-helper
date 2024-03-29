@@ -70,7 +70,7 @@ class MCQView(UserView):
     def next_question_set(self) -> None:
         self.section: HistorySection = random.choice(self._sections)
         self.question_set: QuestionSet = random.choice(self.section.mcqs)
-        self.idx: int = 0 if self._orderly else random.randrange(len(self.question_set.stimulus))
+        self.idx: int = 0 if self._orderly else random.randrange(len(self.question_set.questions))
         self._initial_question_number: int = self.question_number
 
     def next_question(self) -> None:
