@@ -85,6 +85,9 @@ class QuestionSet(NamedTuple):
             questions=[Question(**question) for question in data['questions']],
         )
 
+    def __hash__(self) -> int:
+        return hash(self.stimulus.text or self.stimulus.image)
+
 
 class Stimulus(NamedTuple):
     header: str
