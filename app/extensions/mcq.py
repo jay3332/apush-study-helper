@@ -98,7 +98,8 @@ class MCQNav(discord.ui.Button['MCQView']):
         view = self.view
         view.idx += self.offset
         view.update_items()
-        embeds = [view.make_stimulus_embed(), view.make_question_embed()]
+        embeds = [view.make_results_embed()] if view._reveal else []
+        embeds.extend((view.make_stimulus_embed(), view.make_question_embed()))
         await interaction.response.edit_message(embeds=embeds, view=view)
 
 
